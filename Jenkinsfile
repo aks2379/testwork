@@ -19,9 +19,9 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh """
-                echo 'Hello World from Ashish' > /var/www/html/Index.html
-                """
+                
+                echo 'Hello World from Ashish' > /var/www/html/index.html
+                
             }
         }
     }
