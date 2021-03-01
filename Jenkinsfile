@@ -12,7 +12,8 @@ pipeline {
                 echo 'Installing httpd'
                 sh """
                 sudo apt-get install apache2 -y
-                systemctl 
+                systemctl start apache2
+                systemctl status apache2
                 """                              
                 echo 'We are in Build stage: Httpd started'
             }
