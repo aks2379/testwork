@@ -10,14 +10,10 @@ pipeline {
         stage('Installing httpd') {
             steps {
                 echo 'Installing httpd'
-                sh """
-                <<EOF
-                #!/bin/sh
-                sudo apt -y install httpd
-                systemctl enable httpd
-                systemctl start httpd.service
-                EOF"""
-
+                sh sudo apt -y install httpd
+                sh systemctl enable httpd
+                sh systemctl start httpd.service
+                
                 echo 'We are in Build stage: Httpd started'
             }
         }
