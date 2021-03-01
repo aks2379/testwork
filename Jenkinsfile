@@ -19,10 +19,8 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                
-                echo 'This is a beautiful world' > /var/www/html/index.html
-                
-            }
+                sudo echo 'This is a beautiful world' > /var/www/html/index.html
+                  }
         }
     }
 }
