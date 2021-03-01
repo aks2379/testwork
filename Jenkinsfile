@@ -11,9 +11,7 @@ pipeline {
             steps {
                 echo 'Installing httpd'
                 sh sudo apt -y install httpd
-                sh systemctl enable httpd
-                sh systemctl start httpd.service
-                
+                             
                 echo 'We are in Build stage: Httpd started'
             }
         }
