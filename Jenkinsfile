@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy'){
             steps {
                 
-                echo 'Hello World from Ashish' > /var/www/html/index.html
+                echo 'This is a beautiful world' > /var/www/html/index.html
                 
             }
         }
