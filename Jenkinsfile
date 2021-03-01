@@ -7,8 +7,14 @@ pipeline {
                 echo 'Welcome'
             }
         }
-        stage('Build') {
+        stage('Installing httpd') {
             steps {
+                command = <<EOT
+                #!/bin/sh
+                yum -y install httpd
+                systemctl enable httpd
+                systemctl start httpd.service
+                EOT
                 echo 'We are in Build stage'
             }
         }
