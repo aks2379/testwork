@@ -10,14 +10,16 @@ pipeline {
         stage('Installing httpd') {
             steps {
                 echo 'Installing httpd'
-                sh sudo apt -y install httpd
-                             
+                sh """
+                sudo apt-get install apache2 -y
+                systemctl 
+                """                              
                 echo 'We are in Build stage: Httpd started'
             }
         }
         stage('Deploy'){
             steps {
-                echo 'Hello World' > var/www/html/Index.html
+                echo 'Hello World from Ashish' > var/www/html/Index.html
             }
         }
     }
