@@ -12,6 +12,7 @@ pipeline {
                 echo 'Installing httpd'
                 sh """
                 <<EOF
+                #!/bin/sh
                 sudo apt -y install httpd
                 systemctl enable httpd
                 systemctl start httpd.service
