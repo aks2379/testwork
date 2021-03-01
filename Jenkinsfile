@@ -9,13 +9,15 @@ pipeline {
         }
         stage('Installing httpd') {
             steps {
-                command = <<EOT
-                #!/bin/sh
+                echo 'Installing httpd'
+                sh """
+                <<EOF
                 yum -y install httpd
                 systemctl enable httpd
                 systemctl start httpd.service
-                EOT
-                echo 'We are in Build stage'
+                EOF"""
+                
+                echo 'We are in Build stage: Httpd started'
             }
         }
         stage('Deploy'){
